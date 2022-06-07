@@ -19,6 +19,16 @@ app.get('/greeting/:name', (req, res) => {
     res.send(`Hello, ${name.name}! It's great to see you!`)
 })
 
+app.get('/tip', (req, res) => {
+    res.send(`Tip Calculator`)
+})
+app.get('/tip/:total/:tipPercentage', (req, res) => {
+    console.log(req.params)
+    const total = Number(req.params.total)
+    const tipPercentage = Number(req.params.tipPercentage)
+
+   res.send(`Items ordered.......$${total}   <br> Tip ${tipPercentage}%  ................$${(tipPercentage * total / 100)}  <br> Grand total...........$${( total + (tipPercentage * total / 100))}`) 
+})
 
 
 
