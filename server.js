@@ -53,9 +53,10 @@ app.get('/magic', (req, res) => {
 app.get('/magic/Will%20I%20Be%20A%20Millionaire', (req, res) => {
     const question = req.params
     const result = magic[(Math.floor(Math.random()*20 + 1 ))]
+    //console.log(question)
     console.log(result)
-    console.log(question);
-    res.send(`${`Will I be a millioner`}? ${result}`)
+    
+    res.send(`<br><h1>${`Will I be a millioner`}? <br><br>${result}!</h1>`)
 })
 
 
